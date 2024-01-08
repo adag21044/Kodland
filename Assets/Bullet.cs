@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
 {
     float speed = 3;
     Vector3 direction;
-
+    Alien alien;
     public void setDirection(Vector3 dir)
     {
         direction = dir;
@@ -14,15 +14,21 @@ public class Bullet : MonoBehaviour
     void FixedUpdate()
     {
         transform.position += direction * speed * Time.deltaTime;
-        speed += 1f;
+        speed += 0.05f;
 
-        Collider[] targets = Physics.OverlapSphere(transform.position, 1);
-        foreach (var item in targets)
-        {
-            if (item.tag == "Enemy")
-            {
+        
+    }
+    
+    void OnCollisionEnter(Collision collision) {
+        // Fetch/cache the GameObject you collided with
+        GameObject other = collision.collider.gameObject;
 
-            }
+        // Check if the object you collided with is the "chosen" object
+        if (other.CompareTag("Enemy")) { // or use tags, layers or GetComponent<SomeEnemyComponent> for more flexibility/reusability
+            // Delete the other object
+            Destroy(other);
+            // Delete the bullet last (assuming the bullet holds this script)
+            Destroy(gameObject); // or Destroy(this)
         }
     }
 }
