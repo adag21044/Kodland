@@ -36,6 +36,17 @@ public class PlayerLook : MonoBehaviour
             xAxisClamp = -90;
             rotPlayerArms.x = 270;
         }
+        
+        if (xAxisClamp > 90)
+        {
+            xAxisClamp = 90;
+            rotPlayerArms.x = 90;
+        }
+        else if (xAxisClamp < -90)
+        {
+            xAxisClamp = -90;
+            rotPlayerArms.x = 270;
+        }
 
         playerArms.rotation = Quaternion.Euler(rotPlayerArms);
         player.rotation = Quaternion.Euler(rotPlayer);
