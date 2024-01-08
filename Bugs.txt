@@ -1,0 +1,3 @@
+PlayerController'de Destroy(this) kaldırıldı
+MouseSense'e 0'dan büyük bir değer atandı
+PlayerLook sadece sağa ve sola bakılıyor

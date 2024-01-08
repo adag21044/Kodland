@@ -13,45 +13,22 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private GameObject GameOver;
     [SerializeField] private GameObject Victory;
+    [SerializeField] private CharacterController characterController;
+    [SerializeField] private float moveSpeed = 5f;
 
-    public float health = 0;
+    public float health = 100;
 
     void Start()
     {
-        Destroy(this);
+        
         ChangeHealth(0);
+        
     }
-
-    public void ChangeHealth(int hp)
-    {
-        health += hp;
-        if (health > 100)
-        {
-            health = 100;
-        }
-        else if (health <= 0)
-        {
-            Lost();
-        }
-        HpText.text = health.ToString();
-    }
-
-    public void Win()
-    {
-        Victory.SetActive(true);
-        Destroy(GetComponent<PlayerLook>());
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void Lost()
-    {
-        GameOver.SetActive(true);
-        Destroy(GetComponent<PlayerLook>());
-        Cursor.lockState = CursorLockMode.None;
-    }
-
+    
     void Update()
     {
+        MoveCharacter();
+        
         if (Input.GetMouseButtonDown(0))
         {
             GameObject buf = Instantiate(bullet);
@@ -90,4 +67,55 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
+    public void ChangeHealth(int hp)
+    {
+        health += hp;
+        if (health > 100)
+        {
+            health = 100;
+        }
+        else if (health <= 0)
+        {
+            Lost();
+        }
+        HpText.text = health.ToString();
+    }
+
+    public void Win()
+    {
+        Victory.SetActive(true);
+        Destroy(GetComponent<PlayerLook>());
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Lost()
+    {
+        GameOver.SetActive(true);
+        Destroy(GetComponent<PlayerLook>());
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    
+    void MoveCharacter()
+    {
+        // Input alma
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        // Hareket vektörünü oluştur
+        Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
+        // Dünya koordinatlarına dönüştür (karakterin yönüne göre)
+        moveDirection = transform.TransformDirection(moveDirection);
+
+        // Hareket vektörüne hızı uygula
+        moveDirection *= moveSpeed;
+
+        // Karakteri hareket ettir
+        characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    
 }
