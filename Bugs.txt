@@ -1,0 +1,3 @@
+Mouse sens' 0 ayarlanmıştı onu düzelttim
+Player ve Player Arms Transform değişkenlerine gameobjectler atandı
+
