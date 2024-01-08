@@ -79,12 +79,10 @@ public class PlayerController : MonoBehaviour
             {
                 ChangeHealth(50);
                 Destroy(item.gameObject);
-                
             }
             if (item.tag == "Finish")
             {
                 Win();
-                
             }
             if (item.tag == "Enemy")
             {

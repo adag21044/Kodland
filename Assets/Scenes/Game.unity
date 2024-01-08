@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSense: 10
   player: {fileID: 237374370}
-  playerArms: {fileID: 843225430}
+  playerArms: {fileID: 690675022}
 --- !u!4 &304672924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400106, guid: cabf1857eec6dd243b25ec67651631ca, type: 3}
@@ -611,6 +611,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534346600}
   m_CullTransparentMesh: 0
+--- !u!4 &690675022 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400014, guid: cabf1857eec6dd243b25ec67651631ca, type: 3}
+  m_PrefabInstance: {fileID: 237374368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
