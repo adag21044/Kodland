@@ -24,11 +24,11 @@ public class Bullet : MonoBehaviour
         GameObject other = collision.collider.gameObject;
 
         // Check if the object you collided with is the "chosen" object
-        if (other.CompareTag("Enemy")) { // or use tags, layers or GetComponent<SomeEnemyComponent> for more flexibility/reusability
+        if (collision.collider.CompareTag("Enemy")) { // or use tags, layers or GetComponent<SomeEnemyComponent> for more flexibility/reusability
             // Delete the other object
-            Destroy(other);
+            Destroy(collision.gameObject);
             // Delete the bullet last (assuming the bullet holds this script)
-            Destroy(gameObject); // or Destroy(this)
+            //Destroy(gameObject); // or Destroy(this)
         }
     }
 }
