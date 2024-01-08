@@ -8,6 +8,7 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] Transform player, playerArms;
 
     float xAxisClamp = 0;
+    
 
     // Update is called once per frame
     void Update()
@@ -47,6 +48,8 @@ public class PlayerLook : MonoBehaviour
             xAxisClamp = -90;
             rotPlayerArms.x = 270;
         }
+        
+       
 
         playerArms.rotation = Quaternion.Euler(rotPlayerArms);
         player.rotation = Quaternion.Euler(rotPlayer);
