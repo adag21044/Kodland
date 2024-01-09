@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
     float speed = 3;
     Vector3 direction;
     Alien alien;
+    float lifespan = 5f;
+    float timer = 0f;
+    
     public void setDirection(Vector3 dir)
     {
         direction = dir;
@@ -15,7 +18,15 @@ public class Bullet : MonoBehaviour
     {
         transform.position += direction * speed * Time.deltaTime;
         speed += 0.05f;
-
+        
+        //update timer
+        timer += Time.deltaTime;
+        
+        if (timer > lifespan)
+        {
+            Destroy(gameObject); // Destroy the bullet
+        }
+        
         
     }
     

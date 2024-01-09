@@ -1,3 +1,4 @@
 PlayerController'de Destroy(this) kaldırıldı
 MouseSense'e 0'dan büyük bir değer atandı
-PlayerLook sadece sağa ve sola bakılıyor
+PlayerLook ile sadece sağa ve sola bakılıyor
+Mermi spawnlandıktan sonra hedefe çarptıktan sonra yok olmuyordu bu hata düzeltildi, mermilere bir yaşam süresi atandı
