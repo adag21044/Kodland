@@ -8,8 +8,11 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] Transform player, playerArms;
 
     float xAxisClamp = 0;
-    
 
+    [SerializeField]
+    private Camera fpsCamera;
+    
+   
     // Update is called once per frame
     void Update()
     {
@@ -19,30 +22,38 @@ public class PlayerLook : MonoBehaviour
         float rotateY = Input.GetAxis("Mouse Y") * mouseSense;
 
         xAxisClamp -= rotateY;
-
+    
         Vector3 rotPlayerArms = playerArms.rotation.eulerAngles;
+        
+        Vector3 rotCamera = fpsCamera.transform.localRotation.eulerAngles;
         Vector3 rotPlayer = player.rotation.eulerAngles;
 
         rotPlayerArms.x -= rotateY;
+        rotCamera.x -= rotateY;
+        
         rotPlayerArms.z = 0;
         rotPlayer.y += rotateX;
+        
+        rotCamera.y = rotPlayer.y;
+        
 
         if (xAxisClamp > 90)
         {
             xAxisClamp = 90;
-            rotPlayerArms.x = 90;
+            //rotPlayerArms.x = 90;
+            rotCamera.x = 90;
         }
         else if (xAxisClamp < -90)
         {
             xAxisClamp = -90;
-            rotPlayerArms.x = 270;
+            //rotPlayerArms.x = 270;
+            rotCamera.x = -90;
         }
         
         
-        
        
-
-        playerArms.rotation = Quaternion.Euler(rotPlayerArms);
+        //playerArms.rotation = Quaternion.Euler(rotPlayerArms);
         player.rotation = Quaternion.Euler(rotPlayer);
+        fpsCamera.transform.rotation = Quaternion.Euler(rotCamera);
     }
 }

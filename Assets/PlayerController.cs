@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject Victory;
     [SerializeField] private CharacterController characterController;
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private Transform bulletRay;
 
     public float health = 100;
 
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject buf = Instantiate(bullet);
             buf.transform.position = rifleStart.position;
-            buf.GetComponent<Bullet>().setDirection(transform.forward);
+            buf.GetComponent<Bullet>().setDirection(bulletRay.forward);
             buf.transform.rotation = transform.rotation;
         }
         

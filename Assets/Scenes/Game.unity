@@ -154,6 +154,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 304672924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &216187056 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400014, guid: cabf1857eec6dd243b25ec67651631ca, type: 3}
+  m_PrefabInstance: {fileID: 237374368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &218111902
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSense: 1
   player: {fileID: 237374370}
-  playerArms: {fileID: 843225430}
+  playerArms: {fileID: 216187056}
+  fpsCamera: {fileID: 963194227}
 --- !u!114 &237374372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +337,7 @@ MonoBehaviour:
   Victory: {fileID: 1367528455}
   characterController: {fileID: 237374373}
   moveSpeed: 5
+  bulletRay: {fileID: 963194228}
   health: 100
 --- !u!143 &237374373
 CharacterController:
