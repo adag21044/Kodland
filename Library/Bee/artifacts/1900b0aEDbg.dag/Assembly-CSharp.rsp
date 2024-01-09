@@ -332,7 +332,6 @@
 -analyzer:"D:/Program Files/2022.3.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Alien.cs"
 "Assets/Bullet.cs"
-"Assets/IAlien.cs"
 "Assets/PlayerController.cs"
 "Assets/PlayerLook.cs"
 -langversion:9.0

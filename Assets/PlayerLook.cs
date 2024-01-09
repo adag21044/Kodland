@@ -40,19 +40,19 @@ public class PlayerLook : MonoBehaviour
         if (xAxisClamp > 90)
         {
             xAxisClamp = 90;
-            //rotPlayerArms.x = 90;
+            
             rotCamera.x = 90;
         }
         else if (xAxisClamp < -90)
         {
             xAxisClamp = -90;
-            //rotPlayerArms.x = 270;
+            
             rotCamera.x = -90;
         }
         
         
        
-        //playerArms.rotation = Quaternion.Euler(rotPlayerArms);
+        
         player.rotation = Quaternion.Euler(rotPlayer);
         fpsCamera.transform.rotation = Quaternion.Euler(rotCamera);
     }

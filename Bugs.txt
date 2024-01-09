@@ -3,3 +3,13 @@ MouseSense'e 0'dan büyük bir değer atandı
 
 Mermi spawnlandıktan sonra hedefe çarptıktan sonra yok olmuyordu bu hata düzeltildi, mermilere bir yaşam süresi atandı
 PlayerLook düzeltildi
+
+Mermi'nin Enemy Tagine sahip game objectlere çarpınca  Enemy tagli objectlerin destroy edilmesi sağlandı
+
+FPS Kamera düzeltildi
+
+CharacterController ile basic fps karakter hareketleri sağlandı
+Karaktere hareket hızı verildi
+
+Start fonksiyonunda karakterin health'i 0'a eşitleniyordu. Bunun yerine health'e 100 atandı.
+
