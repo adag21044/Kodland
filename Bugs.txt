@@ -11,5 +11,5 @@ FPS Kamera düzeltildi
 CharacterController ile basic fps karakter hareketleri sağlandı
 Karaktere hareket hızı verildi
 
-Start fonksiyonunda karakterin health'i 0'a eşitleniyordu. Bunun yerine health'e 100 atandı.
+Start fonksiyonunda karakterin health'i 0'a eşitleniyordu. Bunun yerine health'e 100 atandı. 
 
